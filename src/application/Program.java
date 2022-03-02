@@ -11,14 +11,13 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		CurrencyConverter converter = new CurrencyConverter();
 		
 		System.out.print("What is the dollar price? ");
 		double price = sc.nextDouble();
 		System.out.print("How many dollars will be bought? ");
 		double quantity = sc.nextDouble();
 		
-		double conv = converter.priceConverter(price, quantity);
+		double conv = CurrencyConverter.priceConverter(price, quantity);
 		
 		System.out.println("Amount to be paid in reais = " + String.format("%.2f", conv));
 		
