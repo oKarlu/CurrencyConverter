@@ -3,30 +3,27 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Program {
+import util.CurrencyConverter;
 
-	public static final double IOF = 0.06;
+public class Program {
 	
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
+		CurrencyConverter converter = new CurrencyConverter();
 		
 		System.out.print("What is the dollar price? ");
 		double price = sc.nextDouble();
 		System.out.print("How many dollars will be bought? ");
 		double quantity = sc.nextDouble();
 		
-		double conv = priceConverter(price, quantity);
+		double conv = converter.priceConverter(price, quantity);
 		
-		System.out.println("Amount to be paid in reais = " + conv);
+		System.out.println("Amount to be paid in reais = " + String.format("%.2f", conv));
 		
 		sc.close();
 	}
 	
-		public static double priceConverter(double price, double quantity) {
-			return price * quantity + price * quantity * IOF;
-		}
 		
-
 }
